@@ -10,10 +10,6 @@ function M.setup(opts)
          print("hello")
       end
    end)
-
-   vim.keymap.set("n", "<C-y>", function()
-       require("sticky-notes.mark").add_command()
-   end)
 end
 
 return M
