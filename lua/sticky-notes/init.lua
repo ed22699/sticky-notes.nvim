@@ -12,7 +12,7 @@ function M.setup(opts)
    end)
 
    vim.keymap.set("n", "<C-l>", function()
-       require("sticky-notes.mark")
+       require("sticky-notes.mark").add_command()
    end)
 end
 
