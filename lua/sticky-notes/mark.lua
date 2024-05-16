@@ -1,7 +1,8 @@
+local UI = require("UI")
 local M = {}
 
 function M.add_command(command)
-   print("Hello from the add function")
+    UI.MyMenu()
 end
 
 return M
