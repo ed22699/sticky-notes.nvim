@@ -22,7 +22,7 @@ local function ShowMenu(opts, cb)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "q", "<cmd>lua CloseMenu()<CR>", { silent=false })
 end
 
-function M.CloseMenu()
+function CloseMenu()
   vim.api.nvim_win_close(Win_id, true)
 end
 
