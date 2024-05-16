@@ -4,7 +4,7 @@ local M = {}
 
 function M.setup(opts)
     opts = opts or {}
-    vim.keymap.set("n", "<C-m", UI.MyMenu)
+    vim.keymap.set("n", "<leader>m", UI.MyMenu)
     vim.keymap.set("n", "<C-y", Mark.add_command)
 end
 
