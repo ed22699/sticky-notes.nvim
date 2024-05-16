@@ -1,16 +1,11 @@
 local UI = require("sticky-notes.UI")
+local Mark = require("sticky-notes.mark")
 local M = {}
 
 function M.setup(opts)
-   opts = opts or {}
-
-   vim.keymap.set("n", "<Leader>h", function()
-      if opts.name then
-         print("hello, " .. opts.name)
-      else
-         print("hello")
-      end
-   end)
+    opts = opts or {}
+    vim.keymap.set("n", "<C-m", UI.MyMenu)
+    vim.keymap.set("n", "<C-y", Mark.add_command)
 end
 
 return M

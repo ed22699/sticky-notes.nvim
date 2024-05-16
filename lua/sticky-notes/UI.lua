@@ -1,8 +1,9 @@
 local popup = require("plenary.popup")
 
+local M = {}
 local Win_id
 
-function ShowMenu(opts, cb)
+local function ShowMenu(opts, cb)
   local height = 20
   local width = 30
   local borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
@@ -21,14 +22,19 @@ function ShowMenu(opts, cb)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "q", "<cmd>lua CloseMenu()<CR>", { silent=false })
 end
 
-function CloseMenu()
+local function CloseMenu()
   vim.api.nvim_win_close(Win_id, true)
 end
 
-function MyMenu()
-  local opts = {}
+function M.MyMenu()
+  local opts = {
+      "zz | centers cursor to middle",
+      "yy | yanks the current line",
+  }
   local cb = function(_, sel)
-    print("it works")
+    print(sel)
   end
   ShowMenu(opts, cb)
 end
+
+return M
