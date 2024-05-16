@@ -1,3 +1,4 @@
+local UI = require("UI")
 local M = {}
 
 function M.setup(opts)
